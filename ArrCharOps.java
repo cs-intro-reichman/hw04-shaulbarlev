@@ -5,6 +5,7 @@ public class ArrCharOps {
         String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
+        char[] arr3 = {'h','a','m','b','u','r','g', 'e', 'r'};
         // System.out.println(str);  // Prints the string
         // println(arr1);            // Prints an array of characters
         // System.out.println(charAt(arr1,2));      
@@ -13,6 +14,7 @@ public class ArrCharOps {
         // System.out.println(lastIndexOf(arr1, 'c'));
         // System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
+        // System.out.println(subArray(arr3, 4, 8));
         // System.out.println('w'*7^(3));
 
         // System.out.println(equals(arr0,arr1));
@@ -116,10 +118,10 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        char[] out = new char[endIndex-beginIndex+2];
+        char[] out = new char[endIndex-beginIndex];
 
         for (int i = beginIndex; i < endIndex; i++) {
-            out[i] = arr[i];
+            out[i-beginIndex] = arr[i];
         }
         
         return out;
