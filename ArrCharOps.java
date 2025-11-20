@@ -12,7 +12,7 @@ public class ArrCharOps {
         // System.out.println(indexOf(arr1,'l',3)); 
         // System.out.println(lastIndexOf(arr1, 'c'));
         // System.out.println(concat(arr1, arr2));
-        // System.out.println(subArray(arr2, 2, 9));
+        System.out.println(subArray(arr2, 2, 9));
         // System.out.println('w'*7^(3));
 
         // System.out.println(equals(arr0,arr1));
@@ -22,7 +22,7 @@ public class ArrCharOps {
         // System.out.println(compareTo("Abcd", "a"));
         // System.out.println(compareTo("apple", "banana"));
         // System.out.println(compareTo("apple", "applepie"));
-        System.out.println(compareTo("abc", "abcd"));
+        // System.out.println(compareTo("abc", "abcd"));
     //     System.out.println(hashCode(arr1));
     //     System.out.println(hashCode(arr2));
     }
@@ -116,10 +116,10 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        char[] out = new char[endIndex-beginIndex+1];
+        char[] out = new char[endIndex-beginIndex+2];
 
-        for (int i = beginIndex; i <= endIndex; i++) {
-            out[i-beginIndex] = arr[i];
+        for (int i = beginIndex; i < endIndex; i++) {
+            out[i] = arr[i];
         }
         
         return out;
