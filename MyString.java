@@ -6,14 +6,14 @@ public class MyString {
         // System.out.println("TLV : " + lowerCase("TLV"));
         // // System.out.println("lowercase : " + lowerCase("lowercase"));
 
-        System.out.println("Testing contains:");
-        System.out.println(contains("unhappy", "happy")); // true
-        System.out.println(contains("happy", "unhappy")); // false
-        System.out.println(contains("historical", "story")); // false
-        System.out.println(contains("psychology", "psycho")); // true
-        System.out.println(contains("personality", "son")); // true
-        System.out.println(contains("personality", "dad")); // false
-        System.out.println(contains("resignation", "sign")); // true
+        // System.out.println("Testing contains:");
+        // System.out.println(contains("unhappy", "happy")); // true
+        // System.out.println(contains("happy", "unhappy")); // false
+        // System.out.println(contains("historical", "story")); // false
+        // System.out.println(contains("psychology", "psycho")); // true
+        // System.out.println(contains("personality", "son")); // true
+        // System.out.println(contains("personality", "dad")); // false
+        // System.out.println(contains("resignation", "sign")); // true
 
 
         boolean test1 = MyString.contains("baba yaga", "baba");
@@ -21,6 +21,12 @@ public class MyString {
         boolean test3 = !MyString.contains("baba yaga", "John Wick is the baba yaga");
         boolean test4 = !MyString.contains("baba yaga", "Yaga");
         boolean test5 = !MyString.contains("baba yaga", "babayaga");
+
+        System.out.println(test1);
+        System.out.println(test2);
+        System.out.println(test3);
+        System.out.println(test4);
+        System.out.println(test5);
     }
 
     /** Returns the lowercase version of the given string. */
@@ -28,7 +34,7 @@ public class MyString {
         String out = "";
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
-            if (c >= 67 && c <= 90) {
+            if (c >= 65 && c <= 90) {
                 c += 32;
             }
             out += c;
@@ -38,6 +44,7 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
+        if (str2.length() == 0) return true;
         if (str1.length() < str2.length()) return false;
         if (str1.length() == 0 || str2.length() == 0) return false;
 
