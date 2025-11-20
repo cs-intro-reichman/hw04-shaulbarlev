@@ -22,9 +22,9 @@ public class ArrCharOps {
         // System.out.println(compareTo("Abcd", "a"));
         // System.out.println(compareTo("apple", "banana"));
         // System.out.println(compareTo("apple", "applepie"));
-        // System.out.println(compareTo("Zoo", "zoo"));
-        System.out.println(hashCode(arr1));
-        System.out.println(hashCode(arr2));
+        System.out.println(compareTo("abc", "abcd"));
+    //     System.out.println(hashCode(arr1));
+    //     System.out.println(hashCode(arr2));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -172,8 +172,16 @@ public class ArrCharOps {
         int lex1 = 0;
         int lex2 = 0;
 
-        for (int )
-        
+        for (int i = 0; i < str1.length(); i++) {
+            lex1 += str1.charAt(i);
+        }
+        for (int i = 0; i < str2.length(); i++) {
+            lex2 += str2.charAt(i);
+        }
+
+        if (lex1 < lex2) return -1;
+        if (lex1 > lex2) return 1;
+        if (lex1 == lex2) return 0;
 
         return 0;
     }
