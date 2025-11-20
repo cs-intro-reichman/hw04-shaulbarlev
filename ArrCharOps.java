@@ -3,9 +3,13 @@
 public class ArrCharOps {
     public static void main(String[] args) {
         String str = "clearly";
-        char[] arr1 = {'c','l','e','a','r','l','y'};
-        char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        char[] arr3 = {'h','a','m','b','u','r','g', 'e', 'r'};
+        char[] arr1 = {'a'};
+        char[] arr2 = "lemon".toCharArray();
+        char[] arr3 = {};
+
+        System.out.println(ArrCharOps.hashCode(arr1));
+        System.out.println(ArrCharOps.hashCode(arr2));
+        System.out.println(ArrCharOps.hashCode(arr3));
         // System.out.println(str);  // Prints the string
         // println(arr1);            // Prints an array of characters
         // System.out.println(charAt(arr1,2));      
@@ -19,7 +23,7 @@ public class ArrCharOps {
 
         // System.out.println(equals(arr0,arr1));
         // System.out.println(compareTo("abcd", "abcd"));
-        System.out.println(compareTo("abc", ""));
+        // System.out.println(compareTo("abc", ""));
         // System.out.println(compareTo("abc", "abcd"));
         // System.out.println(compareTo("abw", "abcd"));
         // System.out.println(compareTo("Abcd", "a"));
@@ -131,7 +135,7 @@ public class ArrCharOps {
      /** Returns a single integer that represents the given array. This integer is sometimes 
      *  referred to as the array's "hash code". Later in the course we'll explain what these 
      *  hash codes are used for. For now, simply implement the specification given below.
-     *  The hash code is computed as: arr[0]*7^(n-1) + arr[1]*7^(n-2) + ... + arr[n-2]*7 + arr[n-1]
+     *  The hash code is computed as:  + arr[1]*7^(n-2) + ... + arr[n-2]*7 + arr[n-1]
      *  where arr[i] is the i'th character of the array, and n is the array's length.
      *  The hash value of an empty array is zero.
      */
@@ -140,7 +144,8 @@ public class ArrCharOps {
         int hash = 0;
 
         for (int i = 0; i < n; i++) {
-            hash += arr[i]*7^(n-1);
+            hash += arr[i]*Math.pow(7, n-i-1);
+            
         }
         
         return hash;
